@@ -7,13 +7,13 @@ dependencies:
   pre:
     - |
       virtualenv .venv
-      source .vnev/bin/activate
+      source .venv/bin/activate
       pip install -r requirements.txt
 
 test:
   override:
     - |
-      source .vnev/bin/activate
+      source .venv/bin/activate
       flake8 lambda_function.py
 
 deployment:
