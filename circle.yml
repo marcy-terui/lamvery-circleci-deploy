@@ -19,6 +19,7 @@ test:
 deployment:
   master-head:
     branch: master
+    commands:
       - |
         source .vnev/bin/activate
         lamvery deploy
