@@ -21,17 +21,17 @@ deployment:
     branch: master
     commands:
       - |
-        source .vnev/bin/activate
+        source .venv/bin/activate
         lamvery deploy
   staging:
     branch: staging
     commands:
       - |
-        source .vnev/bin/activate
+        source .venv/bin/activate
         lamvery deploy -a staging -p
   production:
     branch: production
     commands:
       - |
-        source .vnev/bin/activate
+        source .venv/bin/activate
         lamvery deploy -a production -p
