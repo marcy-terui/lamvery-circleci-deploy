@@ -1,0 +1,36 @@
+---
+machine:
+  python:
+    version: 2.7
+
+dependencies:
+  pre:
+    - |
+      virtualenv .venv
+      source .vnev/bin/activate
+      pip install -r requirements.txt
+
+test:
+  override:
+    - |
+      source .vnev/bin/activate
+      flake8 lambda_function.py
+
+deployment:
+  master:
+    branch: master
+      - |
+        source .vnev/bin/activate
+        lamvery deploy
+  staging:
+    branch: staging
+    commands:
+      - |
+        source .vnev/bin/activate
+        lamvery deploy -a staging -p
+  production:
+    branch: production
+    commands:
+      - |
+        source .vnev/bin/activate
+        lamvery deploy -a production -p
