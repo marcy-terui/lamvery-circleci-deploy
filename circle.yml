@@ -17,7 +17,7 @@ test:
       flake8 lambda_function.py
 
 deployment:
-  master:
+  master-head:
     branch: master
       - |
         source .vnev/bin/activate
