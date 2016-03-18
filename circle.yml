@@ -1,11 +1,13 @@
 ---
 machine:
-  python:
-    version: 2.7
+  environment:
+    PATH: /opt/lamvery/bin:$PATH
 
 dependencies:
   pre:
     - |
+      echo "deb https://dl.bintray.com/willyworks/deb trusty main" | sudo tee -a /etc/apt/sources.list
+      apt-get install lamvery
       virtualenv .venv
       source .venv/bin/activate
       pip install -r requirements.txt
