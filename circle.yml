@@ -7,6 +7,7 @@ dependencies:
   pre:
     - |
       echo "deb https://dl.bintray.com/willyworks/deb trusty main" | sudo tee -a /etc/apt/sources.list
+      sudo apt-get update
       sudo apt-get install lamvery
       virtualenv .venv
       source .venv/bin/activate
